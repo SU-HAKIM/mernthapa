@@ -30,6 +30,8 @@ router.post('/register', async (req, res) => {
             const result = await user.save();
 
             res.status(200).json(result)
+        } else {
+            return res.status(500).json({ error: 'password must match' })
         }
 
 
